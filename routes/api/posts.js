@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 // @route   GET api/posts
 // @desc    Test route
 // @access  Public
-router.get('/', (req,res) => res.send('Post Route'));
+router.get('/', auth, (req, res) => res.send('Post Route'));
 
 module.exports = router;
